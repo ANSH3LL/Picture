@@ -1,0 +1,35 @@
+{
+  "name": "Picture",
+  "version": "0.1",
+  "manifest_version": 2,
+  "description": "Redirects all instagram URLs to smihub.com or picuki.com per user choice",
+
+  "icons": {
+    "48": "icons/icon-48.png",
+    "96": "icons/icon-96.png",
+    "128": "icons/icon-128.png"
+  },
+
+  "browser_action": {
+    "default_title": "Picture",
+    "default_icon": "icons/icon-32.png",
+    "default_popup": "popup/options.html"
+  },
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "@ansh3ll.picture"
+    }
+  },
+
+  "background": {
+    "scripts": ["picture.js"]
+  },
+
+  "permissions": [
+    "storage",
+    "webRequest",
+    "webRequestBlocking",
+    "*://*.instagram.com/*"
+  ]
+}
