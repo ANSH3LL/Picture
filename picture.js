@@ -20,12 +20,18 @@ function getUsername(igurl) {
 function getMediaId(igurl) {
     mediaId = BigInt(0);
     url = decodeURIComponent(igurl);
-    shortcode = url.match(instaPost)[2].split('');
+    shortcode = url.match(postRegex)[2].split('');
     alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_';
     shortcode.forEach((letter) => {
         mediaId = BigInt((mediaId * 64n)) + BigInt(alphabet.indexOf(letter));
     });
-    return mediaId.toString().split('').reverse().join('');
+    if(document.igRequestHandler == 1) {
+        return mediaId.toString().split('').reverse().join('');
+    } else if(document.igRequestHandler == 2) {
+        return mediaId.toString().split('').join('');
+    } else {
+        return '';
+    }
 }
 
 function setPrefix(result) {
@@ -66,5 +72,5 @@ function igRedirect(details) {
     return {redirectUrl: url};
 }
 
+loadPreferences('dummy', 'dummy');
 browser.storage.onChanged.addListener(loadPreferences);
-browser.webRequest.onBeforeRequest.addListener(igRedirect, filter, ['blocking']);
