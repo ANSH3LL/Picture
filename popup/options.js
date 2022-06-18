@@ -10,7 +10,7 @@ function loadPreferences() {
 function updateUi(result) {
     pref = result.handler;
     if(pref == 1) {
-        document.getElementById('status').innerHTML = 'Status: Using smihub.com';
+        document.getElementById('status').innerHTML = 'Status: Using dumpor.com';
     } else if(pref == 2) {
         document.getElementById('status').innerHTML = 'Status: Using picuki.com';
     } else {
@@ -22,7 +22,7 @@ function displayError() {
     document.getElementById('status').innerHTML = 'Status: Error resolving handler';
 }
 
-function setSmihub() {
+function setDumpor() {
     savePreferences(1);
     loadPreferences();
 }
@@ -38,6 +38,6 @@ function setDisabled() {
 }
 
 document.addEventListener('DOMContentLoaded', loadPreferences);
-document.getElementById('smihub').addEventListener('click', setSmihub);
+document.getElementById('dumpor').addEventListener('click', setDumpor);
 document.getElementById('picuki').addEventListener('click', setPicuki);
 document.getElementById('disabled').addEventListener('click', setDisabled);
