@@ -2,7 +2,7 @@
   "name": "Picture",
   "version": "0.12",
   "manifest_version": 2,
-  "description": "Redirects all instagram URLs to smihub.com or picuki.com per user choice",
+  "description": "Redirects all instagram URLs to dumpor.com or picuki.com per user choice",
 
   "icons": {
     "48": "icons/icon-48.png",

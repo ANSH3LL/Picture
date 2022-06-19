@@ -1,7 +1,7 @@
-//smihub
-const smihub = 'https://smihub.com/';
-const postPrefixS = 'https://smihub.com/c/';
-const profilePrefixS = 'https://smihub.com/v/';
+//dumpor
+const dumpor = 'https://dumpor.com/';
+const postPrefixS = 'https://dumpor.com/c/';
+const profilePrefixS = 'https://dumpor.com/v/';
 //picuki
 const picuki = 'https://www.picuki.com/';
 const postPrefixP = 'https://www.picuki.com/media/';
@@ -53,7 +53,7 @@ function loadPreferences(changes, areaName) {
 
 function igRedirect(details) {
     if(document.igRequestHandler == 1) {
-        redirectTo = smihub;
+        redirectTo = dumpor;
         postPrefix = postPrefixS;
         profilePrefix = profilePrefixS;
     } else if(document.igRequestHandler == 2) {
